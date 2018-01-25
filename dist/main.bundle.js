@@ -1,6 +1,65 @@
 webpackJsonp([2,5],{
 
 /***/ 100:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(351);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyNewServiceService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MyNewServiceService = (function () {
+    function MyNewServiceService(http) {
+        this.http = http;
+        this.weatherId = "d3acf8751fb6329eb7d1d0723229741a";
+        //For Getting location
+        this.appId = "Z5aTxxMXaovOUstW9Z51";
+        this.appCode = "0Nie8-SkPE0yaVHmEDG0xA";
+    }
+    MyNewServiceService.prototype.getWeatherDetails = function (lat, lon) {
+        return this.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + this.weatherId)
+            .map(function (res) { return res.json(); });
+        // return this.http.get('http://api.apixu.com/v1/current.json?key=23319fb777b04d468cc173118173112&q='+lat+','+lon)
+        //   .map(res => res.json());
+    };
+    MyNewServiceService.prototype.getLocationDeatils = function (lat, lon) {
+        return this.http.get('https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json?app_id=' + this.appId + '&app_code=' + this.appCode + '&locationattributes=address,streetDetails,linkInfo&mode=retrieveAddresses&prox=' + lat + ',' + lon + ',50&maxresults=3')
+            .map(function (res) { return res.json(); });
+    };
+    MyNewServiceService.prototype.getStateDetails = function () {
+        return this.http.get('./assets/json/stateIdMap.json')
+            .map(function (res) { return res.json(); });
+    };
+    MyNewServiceService.prototype.getPrediction = function (bodyjson) {
+        return this.http.post('https://cgsafari.herokuapp.com/predict/safari_api', bodyjson)
+            .map(function (res) { return res.json(); });
+    };
+    return MyNewServiceService;
+}());
+MyNewServiceService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+], MyNewServiceService);
+
+var _a;
+//# sourceMappingURL=my-new-service.service.js.map
+
+/***/ }),
+
+/***/ 154:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -9,20 +68,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 100;
+webpackEmptyContext.id = 154;
 
 
 /***/ }),
 
-/***/ 101:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(175);
 
 
 
@@ -35,11 +94,11 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 116:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,8 +116,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
         selector: 'app-root',
-        template: __webpack_require__(192),
-        styles: [__webpack_require__(177)]
+        template: __webpack_require__(345),
+        styles: [__webpack_require__(330)]
     })
 ], AppComponent);
 
@@ -66,21 +125,21 @@ AppComponent = __decorate([
 
 /***/ }),
 
-/***/ 117:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__header_component_header_component_component__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__footer_component_footer_component_component__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__body_component_body_component_component__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__my_new_service_service__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_gauge__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__agm_core__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__header_component_header_component_component__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__footer_component_footer_component_component__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__body_component_body_component_component__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__my_new_service_service__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_gauge__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__agm_core__ = __webpack_require__(164);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -133,12 +192,12 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 118:
+/***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__my_new_service_service__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__my_new_service_service__ = __webpack_require__(100);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BodyComponentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -330,8 +389,8 @@ var BodyComponentComponent = (function () {
 BodyComponentComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
         selector: 'app-body-component',
-        template: __webpack_require__(193),
-        styles: [__webpack_require__(178)]
+        template: __webpack_require__(346),
+        styles: [__webpack_require__(331)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__my_new_service_service__["a" /* MyNewServiceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__my_new_service_service__["a" /* MyNewServiceService */]) === "function" && _a || Object])
 ], BodyComponentComponent);
@@ -341,11 +400,11 @@ var _a;
 
 /***/ }),
 
-/***/ 119:
+/***/ 173:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -367,8 +426,8 @@ var FooterComponentComponent = (function () {
 FooterComponentComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
         selector: 'app-footer-component',
-        template: __webpack_require__(194),
-        styles: [__webpack_require__(179)]
+        template: __webpack_require__(347),
+        styles: [__webpack_require__(332)]
     }),
     __metadata("design:paramtypes", [])
 ], FooterComponentComponent);
@@ -377,11 +436,11 @@ FooterComponentComponent = __decorate([
 
 /***/ }),
 
-/***/ 120:
+/***/ 174:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeaderComponentComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -403,8 +462,8 @@ var HeaderComponentComponent = (function () {
 HeaderComponentComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Component */])({
         selector: 'app-header-component',
-        template: __webpack_require__(195),
-        styles: [__webpack_require__(180)]
+        template: __webpack_require__(348),
+        styles: [__webpack_require__(333)]
     }),
     __metadata("design:paramtypes", [])
 ], HeaderComponentComponent);
@@ -413,7 +472,7 @@ HeaderComponentComponent = __decorate([
 
 /***/ }),
 
-/***/ 121:
+/***/ 175:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -430,10 +489,10 @@ var environment = {
 
 /***/ }),
 
-/***/ 177:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(27)(false);
 // imports
 
 
@@ -448,10 +507,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 178:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(27)(false);
 // imports
 
 
@@ -466,10 +525,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 179:
+/***/ 332:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(27)(false);
 // imports
 
 
@@ -484,10 +543,10 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 180:
+/***/ 333:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(false);
+exports = module.exports = __webpack_require__(27)(false);
 // imports
 
 
@@ -502,100 +561,41 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 192:
+/***/ 345:
 /***/ (function(module, exports) {
 
 module.exports = "<app-header-component></app-header-component>\n\n\n<app-body-component></app-body-component>\n\n\n<app-footer-component></app-footer-component>\n"
 
 /***/ }),
 
-/***/ 193:
+/***/ 346:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container-fluid\">\n   <div class=\"row\">\n      <div class=\"col-md-12\">\n         <h4>A prescriptive machine learning model to calculate the driving risk level at real-time based on demographic, geographic and driving conditions. The model is trained on NHTSA Data base of accidents. </h4>\n         <img src=\"/assets/images/img.png\" class=\"img-bg\" >\n      </div>\n      <div class=\"col-md-12 \">\n         <div class=\"col-md-12 div-border\">\n            <h4> Driver Details </h4>\n         </div>\n         <form>\n            <div class=\"row\">\n               <div class=\"col-md-12\">\n                  <div class=\"col-md-3\">\n                     <div class=\"form-group\">\n                        <label for=\"sex\" class=\"subheading\">Choose Your Gender:</label>\n                        <br>\n                        <input type=\"radio\" [value]=\"1\" name=\"gender\" [(ngModel)]=\"sex\" > Male\n                        <input type=\"radio\" [value]=\"0\" name=\"gender\" [(ngModel)]=\"sex\" > Female\n                     </div>\n                  </div>\n                  <div class=\"col-md-3\">\n                     <div class=\"form-group\">\n                        <label for=\"dob\" class=\"subheading\">Enter Your Age:</label>\n                        <input type=\"number\" class=\"form-control form-control-custom\" id=\"dob\" [(ngModel)]=\"age\" name=\"dobName\">\n                     </div>\n                  </div>\n                  <div class=\"col-md-3\">\n                  </div>\n                  <div class=\"col-md-3\">\n                  </div>\n               </div>\n            </div>\n            <div class=\"row\">\n               <div class=\"col-md-12 \">\n                  <div class=\"col-md-12 div-border\">\n                     <h4> Vehicle Details </h4>\n                  </div>\n               </div>\n               <div class=\"col-md-12\">\n                  <div class=\"col-md-3\">\n                     <label for=\"vtype\" class=\"subheading\">Choose Your Vehicle Type:</label>\n                     <br>\n                     <select [(ngModel)]=\"vehicleType\" name=\"vehicle\">\n                     <option [value]=\"0\">2D Sedan</option>\n                     <option [value]=\"1\">4D Sedan</option>\n                     <option [value]=\"2\">Comp pickup</option>\n                     <option [value]=\"3\">Comp SUV</option>\n                     <option [value]=\"4\">Large Pickup</option>\n                     <option [value]=\"5\">Motorcycle</option>\n                     <option [value]=\"6\">Minivan</option>\n                     </select>\n                  </div>\n                  <div class=\"col-md-3\">\n                     <label for=\"vechage\" class=\"subheading\">Provide Your Vehicle Age:</label>\n                     <!-- <input type=\"date\" class=\"form-control form-control-custom\" id=\"vechage\" [(ngModel)]=\"vechage\" name=\"dobName\" (ngModelChange)=\"calculateVAge($event)\"> -->\n                     <input type=\"number\" [(ngModel)]=\"vechage\" name=\"vage\" id=\"vechage\" class=\"extra-margin-bottom form-control form-control-custom \">\n                  </div>\n                  <div class=\"col-md-6\">\n                  </div>\n               </div>\n            </div>\n         </form>\n      </div>\n      <div class=\"col-md-12\">\n         <div class=\"col-md-12 div-border\">\n            <h4> Driving Conditions </h4>\n         </div>\n         <div class=\"col-md-3\">\n            <!-- <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n               <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n               </agm-map> -->\n            <!-- <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n               <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n               </agm-map> -->\n            <!-- <button class=\"btn btn-info\" (click)=\"getGeoLocation()\">Get Your Location</button> -->\n         </div>\n         <div class=\"col-md-9\">\n         </div>\n      </div>\n      <div class=\"col-md-12\">\n        <!-- Angular Map Directive HTML Starts Here -->\n         <div class=\"col-md-3\">\n            <label class=\"subheading\">\n            Choose Your Location: <i class=\"fa fa-map-marker\" aria-hidden=\"true\" title=\"Detect Your Current Location\" (click)=\"getGeoLocation()\"></i>\n            </label>\n            <agm-map\n            [latitude]=\"lat\"\n            [longitude]=\"lng\"\n            [zoom]=\"zoom\"\n            [disableDefaultUI]=\"false\"\n            [zoomControl]=\"true\"\n            (mapClick)=\"mapClicked($event)\">\n            <agm-marker\n            *ngFor=\"let m of markers; let i = index\"\n            (markerClick)=\"clickedMarker(m.label, i)\"\n            [latitude]=\"m.lat\"\n            [longitude]=\"m.lng\"\n            [label]=\"m.label\"\n            [markerDraggable]=\"m.draggable\"\n            (dragEnd)=\"markerDragEnd(m, $event)\">\n            <agm-info-window>\n               <strong>InfoWindow content</strong>\n            </agm-info-window>\n            </agm-marker>\n            <agm-circle [latitude]=\"lat\" [longitude]=\"lng\"\n            [radius]=\"50\"\n            [fillColor]=\"'red'\"\n            [circleDraggable]=\"true\"\n            [editable]=\"true\">\n            </agm-circle>\n            </agm-map>\n\n            <!-- Angular Map Directive HTML Ends Here -->\n\n         </div>\n         <div class=\"col-md-3\"  *ngIf=\"loacationDeatails!=undefined\">\n            <label class=\"subheading\">Location:</label>\n            <br>\n            <label *ngIf=\"loacationDeatails!=undefined\"> {{loacationDeatails.Location.Address.Label}} </label>\n            <br>\n            <label class=\"subheading\">Weather Status:</label>\n            <br>\n            <span *ngIf=\"wDetails!=undefined\">\n               <!-- <span>City Name- {{wDetails.name}}</span> -->\n               <span>Condition - {{wDetails.weather[0].main}}</span>\n               <!-- <span>({{wDetails.weather[0].description}})</span> -->\n               <br>\n               <span>Humidity - {{wDetails.main.humidity}} %</span>\n               <br>\n               <span>Temperature - {{wDetails.main.temp}} Kelvin</span>\n            </span>\n         </div>\n         <div class=\"col-md-3\" *ngIf=\"loacationDeatails!=undefined\" >\n            <label class=\"subheading\">\n            Speed Limit:\n            </label>\n            <br>\n            <label *ngIf=\"loacationDeatails!=undefined\"> {{speedRange}} MPH </label>\n            <br>\n            <br>\n            <div class=\"col-md-12 no-padding-left\">\n               <label class=\"subheading\"> Vehicle Speed (mph):</label>\n            </div>\n            <div class=\"col-md-1 extra-margin hidden-xs \">\n               <label>0</label>\n            </div>\n            <div class=\"col-md-8 extra-margin col-xs-12\">\n               <input name=\"ram\" type=\"range\" min=\"0\" [max]=\"max\" [(ngModel)]=\"mymodel\" value=\"0\">\n            </div>\n            <div class=\"col-md-2 extra-margin hidden-xs\">\n               <label>{{max}}</label>\n            </div>\n            <!-- </span> <img src=\"/assets/images/clear.png\" width=\"20\" height=\"20\"> -->\n         </div>\n         <div class=\"col-md-3\"  *ngIf=\"loacationDeatails!=undefined\">\n            <div class=\"col-md-2 col-xs-3\">\n            </div>\n\n            <!-- Ng Gauge Directive HTML Starts Here -->\n            <div class=\"col-md-8 col-xs-6\">\n               <ng-gauge [max]=\"max\" [input]=\"mymodel\" [unit]=\"'mph'\" [showDigital]=\"true\" [light]=\"90\" [sectors]=\"sectors\">\n               </ng-gauge>\n            </div>\n            <!-- Ng Gauge Directive HTML Ends Here -->\n\n            <div class=\"col-md-2 col-xs-3\">\n            </div>\n         </div>\n      </div>\n      <div class=\"col-md-12 col-xs-12\">\n         <button class=\"btn btn-info pull-right hidden-xs\" (click)=\"getPrediction()\">Get Risk Level</button>\n         <button class=\"btn btn-info btn-block extra-margin extra-margin-bottom visible-xs\" (click)=\"getPrediction()\">Get Risk Level</button>\n      </div>\n      <div class=\"col-md-12 \">\n         <div class=\"col-md-12 hidden-xs div-border\">\n            <h4> Risk Outcome </h4>\n         </div>\n         <div class=\"col-xs-12 no-padding-left visible-xs\">\n            <h4 class=\"div-border extra-padding\"> Risk Outcome </h4>\n         </div>\n         <div class=\"col-md-12\">\n            <div class=\"col-md-3 col-xs-4\">\n               <!-- <label> Safe </label> -->\n               <label *ngIf=\"predictionResult!=undefined\" style=\"font-size:18px; padding-top:10px;\">  {{predictionResult.INCPROB}} </label>\n            </div>\n            <!-- <div class=\"col-md-3\">\n               <input *ngIf=\"INCPROB=='red'\" class=\"tl\" type=\"radio\" name=\"traffic-light-color\" id=\"color1\" [(ngModel)]=\"INCPROB\" value=\"red\" [checked]=\"INCPROB <0.33\" />\n\n               </div>\n\n               <div class=\"col-md-3\">\n\n               <input *ngIf=\"INCPROB=='yellow'\" class=\"tl\" type=\"radio\" name=\"traffic-light-color\" id=\"color2\" [(ngModel)]=\"INCPROB\" value=\"yellow\" [checked]=\"INCPROB >=0.33 && predictionResult1.INCPROB <0.66\"/>\n\n               </div>\n\n               <div class=\"col-md-3\">\n\n               <input *ngIf=\"INCPROB=='green'\" class=\"tl\" type=\"radio\" name=\"traffic-light-color\" id=\"color3\" [(ngModel)]=\"INCPROB\" value=\"green\" [checked]=\"INCPROB >=0.66\" />\n\n               </div> -->\n            <div class=\"col-md-9 col-xs-8\">\n               <div id=\"traffic-light\">\n                  <input class=\"tl  disabled\" type=\"radio\" name=\"traffic-light-color\" id=\"color1\" [(ngModel)]=\"INCPROB\" value=\"red\" [checked]=\"INCPROB =='red'\" />\n                  <input  class=\"tl  disabled\" type=\"radio\" name=\"traffic-light-color\" id=\"color2\" [(ngModel)]=\"INCPROB\" value=\"yellow\" [checked]=\"INCPROB =='yellow'\"/>\n                  <input  class=\"tl  disabled\" type=\"radio\" name=\"traffic-light-color\" id=\"color3\" [(ngModel)]=\"INCPROB\" value=\"green\" [checked]=\"INCPROB =='green'\" />\n               </div>\n            </div>\n         </div>\n      </div>\n   </div>\n</div>\n"
 
 /***/ }),
 
-/***/ 194:
+/***/ 347:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"footer hidden-xs hidden-sm\">\n<div class=\"nopadding\">\n    <div class=\"col-md-12 col-sm-12 col-xs-12 col-lg-12 footer-padding\">\n        <div class=\"col-md-2 col-sm-2 col-xs-2 col-lg-2 footerLogo-main\" style=\"\">\n            <div class=\"footerLogo img-responsive\">\n                <a href=\"#\" class=\"footer-anchor-tag\">\n                    <img class=\"cgLogo\" src=\"/assets/images/Capgemini.svg\"  alt=\"Not Found\">\n                </a>\n            </div>\n        </div>\n        <div class=\"col-md-4 col30percent\">\n            <div>\n                <a href=\"#\" class=\"footer-anchor-tag\">\n                    <span class=\"text-left text-bold col30percent-span-one\">Connect with Our Team</span>\n                </a>\n                <a href=\"#\" class=\"footer-anchor-tag\">\n                    <span class=\"text-left text-bold col30percent-span-two\">Leadership Team</span>\n                </a>\n            </div>\n        </div>\n        <div class=\"col-md-3 col-sm-3 col-xs-3 col-lg-4 colFollowpercent\">\n            <div>\n                <span class=\"text-left text-bold colFollowpercent-span-one\">Follow us on</span>\n                <span class=\"text-left text-bold \">\n                    <a href=\"https://www.linkedin.com/company-beta/157240/\" target=\"_blank\" class=\"footer-anchor-tag\">\n                        <img class=\"colFollowpercent-image\" src=\"/assets/images/linkedin.png\">\n                    </a>\n                </span>\n                <span class=\"text-left text-bold colFollowpercent-image\">\n                    <a href=\"https://twitter.com/Capgemini\"  target=\"_blank\" class=\"footer-anchor-tag\">\n                        <img class=\"colFollowpercent-image\" src=\"/assets/images/twitter.png\">\n                    </a>\n                </span>\n                <span class=\"text-left text-bold colFollowpercent-image\">\n                    <a href=\"https://www.facebook.com/Capgemini/\" target=\"_blank\" class=\"footer-anchor-tag\">\n                        <img class=\"colFollowpercent-image\" src=\"/assets/images/facebook.png\">\n                    </a>\n                </span>\n            </div>\n        </div>\n        <div class=\"colRights\">\n            <div class=\"text-right colRights-div-one\">\n                <div>Capgemini 2017. All rights reserved</div>\n            </div>\n        </div>\n    </div>\n    </div>\n</div>\n\n<footer class=\"visible-xs visible-sm footer-xs-sm\">\n\n  <div class=\"container-fluid\">\n\n    <div class=\"col-xs-12 col-sm-12 footer-xs-padding\">\n    <div class=\"col-xs-3 col-sm-3\">\n\n    </div>\n\n    <div class=\"col-xs-2 col-sm-2\">\n          <a href=\"https://www.linkedin.com/company-beta/157240/\" target=\"_blank\"  class=\"footer-anchor-tag\">  <img class=\"linkedIn-padding-xs img-footer-xs-sm\" src=\"assets/images/linkedin.png\"></a>\n    </div>\n\n    <div class=\"col-xs-2 col-sm-2\">\n      <a href=\"https://twitter.com/Capgemini\"  target=\"_blank\"  class=\"footer-anchor-tag\"> <img class=\" img-footer-xs-sm\" src=\"assets/images/twitter.png\" ></a>\n    </div>\n\n    <div class=\"col-xs-2 col-sm-2\">\n\n      <a href=\"https://www.facebook.com/Capgemini/\" target=\"_blank\"   class=\"footer-anchor-tag\">  <img class=\" img-footer-xs-sm\" src=\"/assets/images/facebook.png\" ></a>\n\n    </div>\n\n    <div class=\"col-xs-3 col-sm-3\">\n\n    </div>\n\n  </div>\n    <div class=\"col-xs-12 col-sm-12\">\n      <a href=\"https://www.capgemini.com/\" target=\"_blank\" class=\"footer-anchor-tag\">\n        <img class=\"img-responsive img-footer-xs-sm\" src=\"/assets/images/Capgemini.svg\"  alt=\"Not Found\">\n      </a>\n    </div>\n    <div class=\"col-xs-12 col-sm-12 text-center\">\n        <span>Capgemini 2017. All rights reserved</span>\n    </div>\n\n  </div>\n\n</footer>\n"
 
 /***/ }),
 
-/***/ 195:
+/***/ 348:
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-default container-fluid navbar-nospacing main-header hidden-xs\">\n    <div class=\"container-fluid main-cont\">\n        <div class=\"navbar-header\">\n            <a class=\"navbar-brand cg-logo\" href=\"#\">\n                <img alt=\"logo\" class=\"cglogoleaf-image\" src=\"/assets/images/smartlogo.png\" />\n            </a>\n            <a href=\"#\" class=\"navbar-brand\" style=\"margin-top: 10px;\" >\n                <h1 class=\"main-heading\">SAFARI – Smart Advisor For Accident RIsk</h1>\n            </a>\n        </div>\n    </div>\n</nav>\n<nav class=\"navbar navbar-inverse visible-xs\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header mainheader-xs\">\n      <div class=\"col-xs-2\">\n        <a class=\"navbar-brand cg-logo\" href=\"https://www.capgemini.com/\"><img  alt=\"logo\" class=\"cglogoleaf-image-xs\" src=\"/assets/images/smartlogo.png\" /></a>\n      </div>\n      <div class=\"col-xs-10\">\n\n        <a href=\"#\" class=\"header-title-xs navbar-brand\" >\n\n          <h4 class=\"sub-heading\">SAFARI – Smart Advisor For Accident RIsk</h4>\n        </a>\n      </div>\n\n    </div>\n\n</div>\n\n</nav>\n"
 
 /***/ }),
 
-/***/ 230:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(101);
+module.exports = __webpack_require__(155);
 
-
-/***/ }),
-
-/***/ 71:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyNewServiceService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var MyNewServiceService = (function () {
-    function MyNewServiceService(http) {
-        this.http = http;
-        this.weatherId = "d3acf8751fb6329eb7d1d0723229741a";
-        //For Getting location
-        this.appId = "Z5aTxxMXaovOUstW9Z51";
-        this.appCode = "0Nie8-SkPE0yaVHmEDG0xA";
-    }
-    MyNewServiceService.prototype.getWeatherDetails = function (lat, lon) {
-        return this.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=' + this.weatherId)
-            .map(function (res) { return res.json(); });
-        // return this.http.get('http://api.apixu.com/v1/current.json?key=23319fb777b04d468cc173118173112&q='+lat+','+lon)
-        //   .map(res => res.json());
-    };
-    MyNewServiceService.prototype.getLocationDeatils = function (lat, lon) {
-        return this.http.get('https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json?app_id=' + this.appId + '&app_code=' + this.appCode + '&locationattributes=address,streetDetails,linkInfo&mode=retrieveAddresses&prox=' + lat + ',' + lon + ',50&maxresults=3')
-            .map(function (res) { return res.json(); });
-    };
-    MyNewServiceService.prototype.getStateDetails = function () {
-        return this.http.get('./assets/json/stateIdMap.json')
-            .map(function (res) { return res.json(); });
-    };
-    MyNewServiceService.prototype.getPrediction = function (bodyjson) {
-        return this.http.post('https://cgsafari.herokuapp.com/predict/safari_api', bodyjson)
-            .map(function (res) { return res.json(); });
-    };
-    return MyNewServiceService;
-}());
-MyNewServiceService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
-], MyNewServiceService);
-
-var _a;
-//# sourceMappingURL=my-new-service.service.js.map
 
 /***/ })
 
-},[230]);
+},[383]);
 //# sourceMappingURL=main.bundle.js.map
